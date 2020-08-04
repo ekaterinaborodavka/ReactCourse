@@ -1,18 +1,27 @@
 .GoodsListElement {
     border-bottom: 0.5px solid black;
-    margin: 0 10px 0 10px;
+    margin: 0 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .GoodsListElement_Column {
     text-align: left;
-    width: 8%;
+    width: 7%;
 }
 .GoodsListElement_ColumnDescription{
-    width: 30%;
+    width: 15%;
 }
 
 .GoodsListElement_Button{
     width: 12%;
+}
+
+.GoodsListElement_Button button{
+    width: 35%;
+    margin: 0 5px;
+}
+
+.GoodsListElement_Checkbox{
+    width: 2%;
 }

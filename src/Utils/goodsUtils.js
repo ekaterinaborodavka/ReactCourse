@@ -20,3 +20,23 @@ export const getTotal = (goods) => {
         return acc + parseFloat(item.weight);
     }, 0)
 }
+
+export const getSubTotal = (goods) => {
+    return goods.filter((e) => e.active).reduce((acc, item) => {
+        return acc + parseFloat(item.weight);
+    }, 0)
+}
+
+export const removeSelected = (goods) => {
+    return goods.filter((e) => !e.active)
+}
+
+export const toggleCheckbox = (id, goods) => {
+    return goods.map(item => {
+        if(item.id === id){
+            item.active = !item.active
+            return goods, console.log(goods), console.log(id)
+        }
+    })
+}
+

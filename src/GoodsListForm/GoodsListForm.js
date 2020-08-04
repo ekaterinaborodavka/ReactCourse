@@ -6,7 +6,8 @@ export default class GoodsListForm extends Component {
     state = {
         title: '',
         weight: '',
-        description: ''
+        description: '',
+        category: 'Any product'
     }
 
     onFormSubmit = (e) => {
@@ -15,7 +16,8 @@ export default class GoodsListForm extends Component {
         this.setState({
             title: '',
             weight: '',
-            description: ''
+            description: '',
+            category: 'Any product'
         })
     }
 
@@ -26,7 +28,7 @@ export default class GoodsListForm extends Component {
     }
 
     render() {
-        const { title, weight, description } = this.state
+        const { title, weight, description, category } = this.state
         return (
             <div>
                 <form 
@@ -54,6 +56,21 @@ export default class GoodsListForm extends Component {
                         value={description}
                         onChange={this.onInputChange}
                     />
+                    <select 
+                            name="category" 
+                            className="GoodsListFormInput"
+                            value={category}
+                            onChange={this.onInputChange}>
+                        <option id='any_product' value="Any product" >Any product</option>
+                        <option id='soft_drinks' value="Soft drinks" >Soft drinks</option>
+                        <option id='alcohol' value="Alcohol">Alcoholг</option>
+                        <option id='fruits' value="Fruits">Fruits</option>
+                        <option id='vegetables' value="Vegetables">Vegetables</option>
+                        <option id='meat' value="Meat">Meat</option>
+                        <option id='dairy' value="Dairy">Dairy</option>
+                        <option id='fish' value="Fish">Fisht</option>
+                        <option id='bakery' value="Bakery">Bakery</option>
+                    </select>
                     <button className="GoodsListFormButton">Add</button>
                 </form>
             </div>

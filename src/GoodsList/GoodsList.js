@@ -6,6 +6,11 @@ export default class GoodsList extends Component {
     onDelete = (id) => {
         this.props.onDelete(id)
     }
+
+    onToggle = (id) => {
+        this.props.onToggle(id)
+    }
+
     
     render() {
         const { goods } = this.props
@@ -17,6 +22,7 @@ export default class GoodsList extends Component {
                         good={good} 
                         key={good.id}
                         onDelete={this.onDelete}
+                        onToggle={this.onToggle}
                     />
                 )
                 })}
