@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../Total/Total.css'
+import PropTypes from 'prop-types'
 
 export default class Total extends Component {
     render() {
@@ -17,4 +18,9 @@ export default class Total extends Component {
             </div>
         )
     }
+}
+
+Total.propTypes = {
+    total: PropTypes.number,
+    subTotal: PropTypes.number
 }

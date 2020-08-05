@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GoodsListElement from '../GoodsListElement/GoodsListElement'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 export default class GoodsList extends Component {
     onDelete = (id) => {
@@ -13,7 +13,7 @@ export default class GoodsList extends Component {
 
     
     render() {
-        const { goods } = this.props
+        const { goods, categories } = this.props
         return (
             <div>
                 {Array.isArray(goods) && goods.map( (good) => {
@@ -21,8 +21,10 @@ export default class GoodsList extends Component {
                     <GoodsListElement 
                         good={good} 
                         key={good.id}
+                        categories={ categories }
                         onDelete={this.onDelete}
                         onToggle={this.onToggle}
+                        onSave={this.props.onEditElement}
                     />
                 )
                 })}
@@ -36,5 +38,9 @@ GoodsList.defaultProps = {
 }
 
 GoodsList.propTypes = {
-    goods: PropTypes.array
+    goods: PropTypes.array,
+    categories: PropTypes.array,
+    onDelete: PropTypes.func,
+    onToggle: PropTypes.func,
+    onSave: PropTypes.func
 }

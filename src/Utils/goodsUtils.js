@@ -32,10 +32,9 @@ export const removeSelected = (goods) => {
 }
 
 export const toggleCheckbox = (id, goods) => {
-    return goods.map(item => {
+    return goods.forEach(item => {
         if(item.id === id){
             item.active = !item.active
-            return goods, console.log(goods), console.log(id)
         }
     })
 }

@@ -9,6 +9,12 @@
     text-align: left;
     width: 7%;
 }
+
+.GoodsListElement_Column select {
+    width: 90%;
+    margin-left: 0;
+}
+
 .GoodsListElement_ColumnDescription{
     width: 15%;
 }

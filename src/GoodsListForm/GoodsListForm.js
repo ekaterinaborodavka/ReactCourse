@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import CategoryGoods from '../CategoryGoods/CategoryGoods'
 import './GoodsListForm.css'
+import PropTypes from 'prop-types'
 
 export default class GoodsListForm extends Component {
 
@@ -28,52 +30,47 @@ export default class GoodsListForm extends Component {
     }
 
     render() {
-        const { title, weight, description, category } = this.state
+        const { title, weight, description} = this.state
         return (
             <div>
                 <form 
                     className="GoodsListForm" 
                     onSubmit={this.onFormSubmit}
                 >
-                    <input 
+                    <input type="text"
+                        required
                         className="GoodsListFormInput" 
                         placeholder="Title"
                         name="title"
                         value={title}
                         onChange={this.onInputChange}
                     />
-                    <input 
+                    <input type="number"
                         className="GoodsListFormInput" 
                         placeholder="Weight"
                         name="weight"
                         value={weight}
                         onChange={this.onInputChange}
                     />
-                    <input 
+                    <input type="text"
                         className="GoodsListFormInput" 
                         placeholder="Description"
                         name="description"
                         value={description}
                         onChange={this.onInputChange}
                     />
-                    <select 
-                            name="category" 
-                            className="GoodsListFormInput"
-                            value={category}
-                            onChange={this.onInputChange}>
-                        <option id='any_product' value="Any product" >Any product</option>
-                        <option id='soft_drinks' value="Soft drinks" >Soft drinks</option>
-                        <option id='alcohol' value="Alcohol">Alcoholг</option>
-                        <option id='fruits' value="Fruits">Fruits</option>
-                        <option id='vegetables' value="Vegetables">Vegetables</option>
-                        <option id='meat' value="Meat">Meat</option>
-                        <option id='dairy' value="Dairy">Dairy</option>
-                        <option id='fish' value="Fish">Fisht</option>
-                        <option id='bakery' value="Bakery">Bakery</option>
-                    </select>
+                    <CategoryGoods
+                        onChange={ this.onInputChange }
+                        categories={ this.props.categories }
+                    />
                     <button className="GoodsListFormButton">Add</button>
                 </form>
             </div>
         )
     }
+}
+
+GoodsListForm.propTypes = {
+    categories: PropTypes.array,
+    onAdd: PropTypes.func
 }
