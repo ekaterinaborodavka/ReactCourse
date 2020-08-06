@@ -42,5 +42,5 @@ GoodsList.propTypes = {
     categories: PropTypes.array,
     onDelete: PropTypes.func,
     onToggle: PropTypes.func,
-    onSave: PropTypes.func
+    onEditElement: PropTypes.func
 }

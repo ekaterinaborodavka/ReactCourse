@@ -15,7 +15,7 @@ export default class App extends Component {
   state = {
     goods,
     total: getTotal(goods),
-        subTotal: 0
+    subTotal: 0
   }
 
   recalculateTotal = () => {

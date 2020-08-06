@@ -1,40 +1,40 @@
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuidv4} from 'uuid'
 
 export const categories = [
   {
     id: uuidv4(),
-    name: 'Any product'
+    name: 'Any product',
   },
   {
     id: uuidv4(),
-    name: 'Soft drinks'
+    name: 'Soft drinks',
   },
   {
     id: uuidv4(),
-    name: 'Alcohol'
+    name: 'Alcohol',
   },
   {
     id: uuidv4(),
-    name: 'Fruits'
+    name: 'Fruits',
   },
   {
     id: uuidv4(),
-    name: 'Vegetables'
+    name: 'Vegetables',
   },
   {
     id: uuidv4(),
-    name: 'Meat'
+    name: 'Meat',
   },
   {
     id: uuidv4(),
-    name: 'Dairy'
+    name: 'Dairy',
   },
   {
     id: uuidv4(),
-    name: 'Fish'
+    name: 'Fish',
   },
   {
     id: uuidv4(),
-    name: 'Bakery'
-  }
-]
+    name: 'Bakery',
+  },
+];
