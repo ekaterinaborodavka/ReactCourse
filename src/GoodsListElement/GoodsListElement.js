@@ -51,13 +51,13 @@ export default class GoodsListElement extends Component {
     }
 
     render() {
-        const { title, weight, description, category} = this.props.good
+        const { title, weight, description, category, active} = this.props.good
         return (
             <div className="GoodsListElement">
                 <div className="GoodsListElement_Column GoodsListElement_Checkbox">
                     <input 
                             type='checkbox'
-                            onChange={() => this.onToggle()}/>
+                            onChange={() => this.onToggle(active)}/>
                 </div>
                 <div className="GoodsListElement_Column">{
                     this.state.edit ? <input type="text"
