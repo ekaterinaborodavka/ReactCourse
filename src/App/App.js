@@ -52,9 +52,10 @@ export default class App extends Component {
   }
 
   onToggle = (id) => {
-    toggleCheckbox(id, this.state.goods)
+    const newArray = toggleCheckbox(id, this.state.goods)
     this.setState({
-      subTotal: getSubTotal(this.state.goods)
+      goods: newArray,
+      subTotal: getSubTotal(newArray)
     })
   }
 
