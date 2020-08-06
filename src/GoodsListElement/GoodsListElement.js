@@ -10,6 +10,7 @@ export default class GoodsListElement extends Component {
         weight: '',
         description: '',
         category: 'Any product',
+        active: '',
         edit: false
     }
 
@@ -29,23 +30,24 @@ export default class GoodsListElement extends Component {
 
     onEdit = (e) => {
         e.stopPropagation()
-        const {good: {title, weight, description, category} } = this.props;
+        const {good: {title, weight, description, category, active} } = this.props;
         this.setState({
           title,
           weight,
           description,
           category,
+          active,
           edit: true
         })
       }
 
     onSave = () => {
-        const { title, weight, description, category } = this.state
+        const { title, weight, description, category, active } = this.state
         const { good: {id}, onSave } = this.props
         this.setState({
             edit: false
         })
-        onSave(id, { title, weight, description, category })
+        onSave(id, { title, weight, description, category, active })
     }
 
     render() {
@@ -102,6 +104,7 @@ GoodsListElement.propTypes = {
         title: PropTypes.string,
         weight: PropTypes.string,
         description: PropTypes.string,
+        active: PropTypes.bool,
         category: PropTypes.string
     })
 }

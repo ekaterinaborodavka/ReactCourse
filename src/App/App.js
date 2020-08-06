@@ -65,7 +65,8 @@ export default class App extends Component {
         editGoods[index] = {id, ...data}
       return {
         goods: editGoods,
-        total: getTotal(editGoods)
+        total: getTotal(editGoods),
+        subTotal: getSubTotal(editGoods)
       }
     })
   }
