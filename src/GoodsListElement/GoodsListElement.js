@@ -57,7 +57,8 @@ export default class GoodsListElement extends Component {
                 <div className="GoodsListElement_Column GoodsListElement_Checkbox">
                     <input 
                             type='checkbox'
-                            onChange={() => this.onToggle(active)}/>
+                            checked = {active}
+                            onChange={() => this.onToggle()}/>
                 </div>
                 <div className="GoodsListElement_Column">{
                     this.state.edit ? <input type="text"

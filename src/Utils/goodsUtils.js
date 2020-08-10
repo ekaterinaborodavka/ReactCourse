@@ -3,6 +3,7 @@ import {v4 as uuidv4} from 'uuid'
 export const newItemFromData = (data) => {
   return {
     id: uuidv4(),
+    active: false,
     ...data,
   }
 }
